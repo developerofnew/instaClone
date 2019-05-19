@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+     android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:id="@+id/relLayout2"
+            >
+            <!-- Upper part  layout -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:id="@+id/upper_part_linear_layout">
+
+                <!-- Profile image layout -->
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="25dp"
+                    tools:ignore="RtlCompat,Suspicious0dp"
+                    android:layout_weight="25"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/profile_image"
+                        />
+
+                </RelativeLayout>
+                <!-- End of profile image layout -->
+
+                <!-- Post &follower layout -->
+
+
+                <RelativeLayout
+                    android:layout_marginStart="30dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    tools:ignore="RtlCompat,Suspicious0dp"
+                    android:layout_weight="75"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <include layout="@layout/upper_part_snippet"/>
+
+                    </RelativeLayout>
+
+                <!-- End Post &follower layout -->
+
+            </LinearLayout>
+            <!-- End of upper part -->
+
+            <!--Middle part layout start -->
+            <LinearLayout
+                android:id="@+id/middle_part_layout"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/upper_part_linear_layout"
+                >
+            <TextView
+                android:id="@+id/display_name_tv"
+                android:text="Name"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:text="Description"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <!--Middle part layout end -->
+
+            <!-- Lower part layout start-->
+            <RelativeLayout
+                android:id="@+id/lower_part_layout"
+                android:layout_marginBottom="1dp"
+                android:layout_below="@id/middle_part_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <GridView
+                    android:id="@+id/image_grid_view"
+                    android:gravity="center"
+                    android:numColumns="3"
+                    android:verticalSpacing="1dp"
+                    android:horizontalSpacing="1dp"
+                    android:stretchMode="columnWidth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </GridView>
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</merge>
